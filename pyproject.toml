@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-monitor-gui"
+version = "0.1.0"
+description = "Simple Tkinter GUI to display NVIDIA GPU stats using nvidia-smi"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {text = "MIT"}
+authors = [
+  {name = "Your Name", email = "you@example.com"}
+]
+requires-python = ">=3.8"
+keywords = ["gpu", "nvidia", "nvidia-smi", "monitoring", "gui", "tkinter"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Environment :: X11 Applications :: GTK",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: System :: Monitoring",
+]
+# No install-time Python dependencies; tkinter and nvidia-smi are system-provided
+
+[project.urls]
+Homepage = "https://example.com/gpu-monitor-gui"
+Repository = "https://example.com/gpu-monitor-gui.git"
+
+[project.scripts]
+# Expose a console entrypoint `gpu-monitor`
+# We reuse the existing top-level module and its main() function
+"gpu-monitor" = "gpu_monitor:main"
+
+[tool.setuptools]
+# Package is a single module file at project root
+py-modules = ["gpu_monitor"]
+
+[tool.setuptools.packages.find]
+# Not used because we publish a single module
+where = ["."]
+

@@ -1,0 +1,10 @@
+# GPU Monitor Requirements
+# This application uses only Python standard library modules
+# No additional packages are required
+
+# Required system dependencies:
+# - nvidia-smi (NVIDIA System Management Interface)
+# - Python 3.6+ with tkinter (usually included with Python)
+
+# Optional but recommended:
+# - NVIDIA drivers installed and working
